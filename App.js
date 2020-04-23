@@ -87,8 +87,10 @@ const QRScanScreen = ({ navigation}) => {
     let url = "https://ssjnonthaburi.moph.go.th/covidscan/index.php?module=consumer_scan&a851eb48ddeae74f465ae5719bba6933&fmod=token&SERVANTID=1330500022874&PHONEID=0879581794";
     fetch(url, { method: 'GET', }) .then((resp) => { return resp.text(); })
     .then((text) => {
-      console.log("DATA OK: ");
-      navigation.navigate('Input')
+      setTimeout(() => {
+        console.log("DATA OK2: ", data);
+        navigation.navigate('Input')
+        }, 1000);
     })
     .catch((err) => {
       setScanned(false);
